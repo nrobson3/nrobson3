@@ -9,25 +9,25 @@
 <line x1="18.5" y1="0.7" x2="881.5" y2="0.7" stroke="#141414" stroke-width="1.4"/>
 <line x1="18.5" y1="766.5" x2="881.5" y2="766.5" stroke="#141414" stroke-width="1.4"/>
 <g transform="translate(0 -17.8)">
-<text x="44" y="49.2" font-size="13.2" xml:space="preserve"><tspan fill="#141414" font-weight="700">navy@robson </tspan><tspan fill="#cfcfcf">----------------------------------------</tspan></text>
-<text x="44" y="69.7" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#6a6a6a">Host: </tspan><tspan fill="#cfcfcf">................ </tspan><tspan fill="#141414">Western University, Ontario</tspan></text>
-<text x="44" y="90.2" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#6a6a6a">Kernel: </tspan><tspan fill="#cfcfcf">........... </tspan><tspan fill="#141414">Engineering, common first year</tspan></text>
-<text x="44" y="110.7" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#6a6a6a">Uptime: </tspan><tspan fill="#cfcfcf">.............. </tspan><tspan fill="#141414">Year 1 of 5, co-op included</tspan></text>
-<text x="44" y="131.2" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#6a6a6a">Shell: </tspan><tspan fill="#cfcfcf">....................... </tspan><tspan fill="#141414">Autodesk Fusion 360</tspan></text>
-<text x="44" y="151.7" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#6a6a6a">Scripting: </tspan><tspan fill="#cfcfcf">................ </tspan><tspan fill="#141414">Python, Fusion 360 API</tspan></text>
-<text x="44" y="172.2" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#6a6a6a">CAD: </tspan><tspan fill="#cfcfcf">......................... </tspan><tspan fill="#141414">Fusion 360, Onshape</tspan></text>
-<text x="44" y="192.7" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#6a6a6a">Languages.Real: </tspan><tspan fill="#cfcfcf">.......................... </tspan><tspan fill="#141414">English</tspan></text>
+<text x="44" y="49.2" font-size="13.2" xml:space="preserve"><tspan fill="#0969da" font-weight="700">navy@robson </tspan><tspan fill="#cfcfcf">----------------------------------------</tspan></text>
+<text x="44" y="69.7" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#0969da">Host: </tspan><tspan fill="#cfcfcf">................ </tspan><tspan fill="#141414">Western University, Ontario</tspan></text>
+<text x="44" y="90.2" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#0969da">Kernel: </tspan><tspan fill="#cfcfcf">........... </tspan><tspan fill="#141414">Engineering, common first year</tspan></text>
+<text x="44" y="110.7" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#0969da">Uptime: </tspan><tspan fill="#cfcfcf">.............. </tspan><tspan fill="#141414">Year 1 of 5, co-op included</tspan></text>
+<text x="44" y="131.2" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#0969da">Shell: </tspan><tspan fill="#cfcfcf">....................... </tspan><tspan fill="#141414">Autodesk Fusion 360</tspan></text>
+<text x="44" y="151.7" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#0969da">Scripting: </tspan><tspan fill="#cfcfcf">................ </tspan><tspan fill="#141414">Python, Fusion 360 API</tspan></text>
+<text x="44" y="172.2" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#0969da">CAD: </tspan><tspan fill="#cfcfcf">......................... </tspan><tspan fill="#141414">Fusion 360, Onshape</tspan></text>
+<text x="44" y="192.7" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#0969da">Languages.Real: </tspan><tspan fill="#cfcfcf">.......................... </tspan><tspan fill="#141414">English</tspan></text>
 <text x="44" y="225.5" font-size="13.2" xml:space="preserve"><tspan fill="#141414" font-weight="700">- Engineering </tspan><tspan fill="#cfcfcf">--------------------------------------</tspan></text>
-<text x="44" y="246.0" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#6a6a6a">Mechanisms: </tspan><tspan fill="#cfcfcf">....... </tspan><tspan fill="#141414">gear trains, linkages, gimbals</tspan></text>
-<text x="44" y="266.5" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#6a6a6a">Moulded.Parts: </tspan><tspan fill="#cfcfcf">... </tspan><tspan fill="#141414">snap fits, draft, parting lines</tspan></text>
-<text x="44" y="287.0" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#6a6a6a">Drawings: </tspan><tspan fill="#cfcfcf">.................. </tspan><tspan fill="#141414">GD&amp;T, ISO first-angle</tspan></text>
+<text x="44" y="246.0" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#0969da">Mechanisms: </tspan><tspan fill="#cfcfcf">....... </tspan><tspan fill="#141414">gear trains, linkages, gimbals</tspan></text>
+<text x="44" y="266.5" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#0969da">Moulded.Parts: </tspan><tspan fill="#cfcfcf">... </tspan><tspan fill="#141414">snap fits, draft, parting lines</tspan></text>
+<text x="44" y="287.0" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#0969da">Drawings: </tspan><tspan fill="#cfcfcf">.................. </tspan><tspan fill="#141414">GD&amp;T, ISO first-angle</tspan></text>
 <text x="44" y="319.8" font-size="13.2" xml:space="preserve"><tspan fill="#141414" font-weight="700">- Currently </tspan><tspan fill="#cfcfcf">----------------------------------------</tspan></text>
-<text x="44" y="340.3" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#6a6a6a">Team: </tspan><tspan fill="#cfcfcf">........... </tspan><tspan fill="#141414">Western Formula Racing (recruit)</tspan></text>
-<text x="44" y="360.8" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#6a6a6a">Building: </tspan><tspan fill="#cfcfcf">......... </tspan><tspan fill="#141414">service brake, manual override</tspan></text>
-<text x="44" y="381.3" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#6a6a6a">Learning: </tspan><tspan fill="#cfcfcf">...................... </tspan><tspan fill="#141414">FEA in SolidWorks</tspan></text>
+<text x="44" y="340.3" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#0969da">Team: </tspan><tspan fill="#cfcfcf">........... </tspan><tspan fill="#141414">Western Formula Racing (recruit)</tspan></text>
+<text x="44" y="360.8" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#0969da">Building: </tspan><tspan fill="#cfcfcf">......... </tspan><tspan fill="#141414">service brake, manual override</tspan></text>
+<text x="44" y="381.3" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#0969da">Learning: </tspan><tspan fill="#cfcfcf">...................... </tspan><tspan fill="#141414">FEA in SolidWorks</tspan></text>
 <text x="44" y="414.1" font-size="13.2" xml:space="preserve"><tspan fill="#141414" font-weight="700">- Freelance </tspan><tspan fill="#cfcfcf">----------------------------------------</tspan></text>
-<text x="44" y="434.6" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#6a6a6a">Platform: </tspan><tspan fill="#cfcfcf">................................. </tspan><tspan fill="#141414">Upwork</tspan></text>
-<text x="44" y="455.1" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#6a6a6a">Clients: </tspan><tspan fill="#cfcfcf">............... </tspan><tspan fill="#141414">product makers, inventors</tspan></text>
+<text x="44" y="434.6" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#0969da">Platform: </tspan><tspan fill="#cfcfcf">................................. </tspan><tspan fill="#141414">Upwork</tspan></text>
+<text x="44" y="455.1" font-size="13.2" xml:space="preserve"><tspan fill="#cfcfcf">. </tspan><tspan fill="#0969da">Clients: </tspan><tspan fill="#cfcfcf">............... </tspan><tspan fill="#141414">product makers, inventors</tspan></text>
 <g font-size="13.8" fill="#141414" xml:space="preserve">
 <text x="443.7" y="51.6">                         imk**m@@@M%k</text>
 <text x="443.7" y="67.0">                      *HMHM@@M@@@@MH@MM*</text>
@@ -82,7 +82,7 @@
 </g>
 <line x1="18.5" y1="503.7" x2="881.5" y2="503.7" stroke="#141414" stroke-width="1.4"/>
 <g transform="translate(0 485.2)">
-<text x="44" y="49" font-size="11" letter-spacing="3" fill="#6a6a6a">UPWORK</text>
+<text x="44" y="49" font-size="11" letter-spacing="3" fill="#0969da">UPWORK</text>
 <text x="44" y="105" font-size="30" font-weight="700" fill="#141414">100%</text>
 <line x1="44" y1="114" x2="194" y2="114" stroke="#cfcfcf" stroke-width="1"/>
 <text x="44" y="130" font-size="10.5" letter-spacing="1.5" fill="#6a6a6a">JOB SUCCESS</text>
@@ -96,7 +96,7 @@
 <line x1="244" y1="190" x2="394" y2="190" stroke="#cfcfcf" stroke-width="1"/>
 <text x="244" y="206" font-size="10.5" letter-spacing="1.5" fill="#6a6a6a">EARNED</text>
 <line x1="450.5" y1="19" x2="450.5" y2="236" stroke="#cfcfcf" stroke-width="1"/>
-<text x="476" y="49" font-size="11" letter-spacing="3" fill="#6a6a6a">GITHUB</text>
+<text x="476" y="49" font-size="11" letter-spacing="3" fill="#0969da">GITHUB</text>
 <text x="476" y="99" font-size="24" font-weight="700" fill="#141414">2</text>
 <text x="476" y="116" font-size="9.5" letter-spacing="1" fill="#6a6a6a">PUBLIC</text>
 <text x="476" y="128" font-size="9.5" letter-spacing="1" fill="#6a6a6a">REPOS</text>
@@ -138,7 +138,7 @@
 <rect x="804.1" y="151.5" width="10.0" height="25" fill="none" stroke="#cfcfcf" stroke-width="1"/>
 <rect x="816.7" y="151.5" width="10.0" height="25" fill="none" stroke="#cfcfcf" stroke-width="1"/>
 <rect x="829.3" y="151.5" width="10.0" height="25" fill="none" stroke="#cfcfcf" stroke-width="1"/>
-<rect x="841.4" y="151" width="11.0" height="26" fill="#141414" fill-opacity="1.00"/>
+<rect x="841.4" y="151" width="11.0" height="26" fill="#216e39"><animate attributeName="opacity" values="1;1;0.27;1;1;0.30;1;1;0.45;1;1" keyTimes="0.000;0.099;0.124;0.169;0.450;0.475;0.520;0.558;0.583;0.628;1.000" dur="4.12s" begin="-1.67s" repeatCount="indefinite"/></rect>
 <text x="476" y="199" font-size="12" fill="#6a6a6a">7 contributions in the last 30 days</text>
 <text x="852" y="199" font-size="10" text-anchor="end" fill="#6a6a6a">15 OCT</text>
 <line x1="19" y1="236" x2="881" y2="236" stroke="#141414" stroke-width="1.4"/>

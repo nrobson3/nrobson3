@@ -91,7 +91,7 @@ def main():
 
     images = sorted(os.path.relpath(p, REPO).replace(os.sep, '/')
                     for p in glob.glob(os.path.join(HERE, 'profile-*.svg')) + glob.glob(os.path.join(HERE, 'link-*.svg')))
-    run(['git', 'add', '-A', 'assets/profile_data.json'] + images)
+    run(['git', 'add', '-A', 'README.md', 'assets/profile_data.json'] + images)
     if not run(['git', 'diff', '--cached', '--name-only']).strip():
         print('no changes to publish')
         return

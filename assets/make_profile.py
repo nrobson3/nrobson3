@@ -91,6 +91,38 @@ def bottom(theme, g):
     return '\n'.join(o)
 
 
+LINK_URLS = {
+    'linkedin': ('https://www.linkedin.com/in/navy-robson', 'LinkedIn: in/navy-robson'),
+    'upwork': ('https://www.upwork.com/freelancers/navyrobson', 'Upwork: freelancers/navyrobson'),
+    'code': ('https://github.com/nrobson3/fusion360-parametric-parts', 'Code: fusion360-parametric-parts'),
+}
+TOP_ALT = ('Navy Robson. Engineering student at Western University (common first year). Fusion 360 '
+           'mechanical design: mechanisms, moulded-part DFM, GD&T drawings; Python and the Fusion API.')
+BOTTOM_ALT = ('Character portrait of Navy Robson beside a spec list, then Upwork figures (Job Success, rating, '
+              'jobs, earnings) and GitHub figures with contributions over the last 30 days.')
+
+
+def readme():
+    """One line, no spaces between tags: the pieces must sit edge to edge. Each image
+    path carries a hash of its contents, so a changed image is never served from cache."""
+    import hashlib
+
+    def src(name):
+        data = open(os.path.join(HERE, name), 'rb').read()
+        return 'assets/%s?v=%s' % (name, hashlib.sha1(data).hexdigest()[:8])
+
+    def pic(stem, alt, width):
+        return ('<picture><source media="(prefers-color-scheme: dark)" srcset="%s"><img alt="%s" src="%s" '
+                'width="%s" align="top"></picture>' % (src(stem + '-dark.svg'), esc(alt).replace('"', '&quot;'),
+                                                       src(stem + '-light.svg'), width))
+    parts = [pic('profile-top', TOP_ALT, '100%')]
+    for key, (url, alt) in LINK_URLS.items():
+        parts.append('<a href="%s">%s</a>' % (url, pic('link-' + key, alt, '33.333%')))
+    parts.append(pic('profile-bottom', BOTTOM_ALT, '100%'))
+    with open(os.path.join(os.path.dirname(HERE), 'README.md'), 'w', encoding='utf-8', newline='\n') as f:
+        f.write(''.join(parts) + '\n')
+
+
 if __name__ == '__main__':
     g = make_stats.github_numbers()
     print('repos %d, scripts %d, tests %d, last 30 days %d'
@@ -99,4 +131,5 @@ if __name__ == '__main__':
         write(os.path.join(HERE, 'profile-top-%s.svg' % t), top(t))
         write(os.path.join(HERE, 'profile-bottom-%s.svg' % t), bottom(t, g))
     make_links.build(framed)
-    print('wrote profile-top, link cells and profile-bottom (dark and light)')
+    readme()
+    print('wrote profile-top, link cells, profile-bottom (dark and light) and README.md')

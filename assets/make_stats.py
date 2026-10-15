@@ -9,6 +9,7 @@ on a schedule: refresh with
 then commit the two SVGs when you want the profile to show the new numbers.
 """
 import datetime as dt
+import random
 import glob
 import json
 import os
@@ -75,6 +76,21 @@ def count_tests(repos):
     return n
 
 
+def flicker(rnd):
+    """Opacity keyframes for one cell: two or three short dips of random depth at
+    random moments in the cycle, so neighbouring cells never pulse together."""
+    vals, times = ['1'], [0.0]
+    for t in sorted(rnd.uniform(0.05, 0.85) for _ in range(rnd.randint(2, 3))):
+        if t <= times[-1] + 0.02:
+            continue
+        depth = '%.2f' % rnd.uniform(0.2, 0.55)
+        vals += ['1', depth, '1']
+        times += [t, t + 0.025, t + 0.07]
+    vals.append('1')
+    times.append(1.0)
+    return ';'.join(vals), ';'.join('%.3f' % k for k in times)
+
+
 def sheet(c, g):
     o = [open_svg(W, H, 'Performance data: Upwork %s; GitHub %d contributions in the last 30 days'
                   % (', '.join('%s %s' % (v, k.lower()) for v, k in UPWORK), sum(g['series'])))]
@@ -84,7 +100,7 @@ def sheet(c, g):
 
     def heading(x, text):
         o.append('<text x="%d" y="%d" font-size="11" letter-spacing="3" fill="%s">%s</text>'
-                 % (x, top + 30, c['muted'], esc(text)))
+                 % (x, top + 30, c['accent'], esc(text)))
 
     # ---------------- Upwork: 2 x 2 figures
     heading(44, 'UPWORK')
@@ -111,12 +127,19 @@ def sheet(c, g):
                      % (x, top + 97 + 12 * j, c['muted'], esc(word)))
 
     series, peak = g['series'], max(max(g['series']), 1)
+    rnd = random.Random(g['end'].isoformat())     # same flicker for both themes on a given day
     cw, gap, sy, sh = 11.0, 1.6, top + 132, 26
     for i, n in enumerate(series):
         x = gx + i * (cw + gap)
         if n:
-            o.append('<rect x="%.1f" y="%d" width="%.1f" height="%d" fill="%s" fill-opacity="%.2f"/>'
-                     % (x, sy, cw, sh, c['ink'], 0.35 + 0.65 * n / peak))
+            # GitHub's four activity levels, then a brief random dip in brightness
+            level = min(3, int(4 * n / peak - 1e-9))
+            values, times = flicker(rnd)
+            dur = rnd.uniform(3.0, 6.5)
+            o.append('<rect x="%.1f" y="%d" width="%.1f" height="%d" fill="%s">'
+                     '<animate attributeName="opacity" values="%s" keyTimes="%s" '
+                     'dur="%.2fs" begin="%.2fs" repeatCount="indefinite"/></rect>'
+                     % (x, sy, cw, sh, c['green'][level], values, times, dur, -rnd.uniform(0, dur)))
         else:
             o.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%d" fill="none" stroke="%s" stroke-width="1"/>'
                      % (x + 0.5, sy + 0.5, cw - 1, sh - 1, c['faint']))

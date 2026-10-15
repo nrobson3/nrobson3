@@ -1,8 +1,12 @@
 """Shared drawing-sheet style for the profile SVGs: themes, frame, title block."""
 
+# accent and green are GitHub's own: link blue and the contribution-graph greens
+# (four levels, lightest activity first) for each colour scheme.
 THEMES = {
-    'dark': {'bg': '#0a0a0a', 'ink': '#e8e8e8', 'muted': '#8a8a8a', 'faint': '#3a3a3a'},
-    'light': {'bg': '#ffffff', 'ink': '#141414', 'muted': '#6a6a6a', 'faint': '#cfcfcf'},
+    'dark': {'bg': '#0a0a0a', 'ink': '#e8e8e8', 'muted': '#8a8a8a', 'faint': '#3a3a3a',
+             'accent': '#58a6ff', 'green': ['#0e4429', '#006d32', '#26a641', '#39d353']},
+    'light': {'bg': '#ffffff', 'ink': '#141414', 'muted': '#6a6a6a', 'faint': '#cfcfcf',
+              'accent': '#0969da', 'green': ['#9be9a8', '#40c463', '#30a14e', '#216e39']},
 }
 FONT = "Consolas, 'DejaVu Sans Mono', Menlo, 'Liberation Mono', monospace"
 

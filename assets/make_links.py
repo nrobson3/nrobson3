@@ -41,12 +41,12 @@ def cell(c, framed, i, label, value, glyph):
     bx = x0 + 16
     o += badge(c, bx, (H - 28) / 2, glyph)
     tx = bx + 28 + 12
-    o.append('<text x="%.1f" y="%d" font-size="10" letter-spacing="2" fill="%s">%s</text>' % (tx, 27, c['muted'], esc(label)))
+    o.append('<text x="%.1f" y="%d" font-size="10" letter-spacing="2" fill="%s">%s</text>' % (tx, 27, c['accent'], esc(label)))
     room = (x1 - 30) - tx
     size = min(13.5, room / (0.6 * len(value)))
     o.append('<text x="%.1f" y="%d" font-size="%.1f" fill="%s">%s</text>' % (tx, 45, size, c['ink'], esc(value)))
     ax, ay = x1 - 18, H // 2
-    o.append('<g fill="none" stroke="%s" stroke-width="1.4" stroke-linecap="square">' % c['ink'])
+    o.append('<g fill="none" stroke="%s" stroke-width="1.4" stroke-linecap="square">' % c['accent'])
     o.append('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d"/>' % (ax - 6, ay + 6, ax + 5, ay - 5))
     o.append('<polyline points="%.1f,%d %.1f,%d %.1f,%d"/>' % (ax - 2, ay - 5, ax + 5, ay - 5, ax + 5, ay + 2))
     o.append('</g></svg>')

@@ -4,9 +4,9 @@
 <line x1="18.5" y1="0.0" x2="18.5" y2="64.0" stroke="#141414" stroke-width="1.4"/>
 <rect x="34.5" y="18.0" width="28" height="28" rx="5" fill="#141414"/>
 <text x="48.5" y="37.4" text-anchor="middle" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="15.0" font-weight="700" fill="#ffffff">in</text>
-<text x="74.5" y="27" font-size="10" letter-spacing="2" fill="#6a6a6a">LINKEDIN</text>
+<text x="74.5" y="27" font-size="10" letter-spacing="2" fill="#0969da">LINKEDIN</text>
 <text x="74.5" y="45" font-size="13.5" fill="#141414">in/navy-robson</text>
-<g fill="none" stroke="#141414" stroke-width="1.4" stroke-linecap="square">
+<g fill="none" stroke="#0969da" stroke-width="1.4" stroke-linecap="square">
 <line x1="276.0" y1="38" x2="287.0" y2="27"/>
 <polyline points="280.0,27 287.0,27 287.0,34"/>
 </g></svg>

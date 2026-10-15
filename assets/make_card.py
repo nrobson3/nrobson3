@@ -142,7 +142,8 @@ def card(theme):
     # ---------------- gears
     g = ['<g fill="none" stroke="%s" stroke-width="1.15" stroke-linejoin="round">' % c['ink']]
     # centre lines and pitch circles (chain lines)
-    chain = 'stroke="%s" stroke-width="0.8" stroke-dasharray="14 3 2 3"' % c['muted']
+    chain = ('stroke="%s" stroke-opacity="0.75" stroke-width="0.8" stroke-dasharray="14 3 2 3"'
+             % c['accent'])
     span = (RING_OD / 2 + 8) * s
     g.append('<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" %s/>' % (cx - span, cy, cx + span, cy, chain))
     g.append('<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" %s/>' % (cx, cy - span, cx, cy + span, chain))
@@ -186,10 +187,11 @@ def card(theme):
     col = 12                                     # label column width, characters
     for label, values in ROWS:
         for j, v in enumerate(values):
-            lead = (label + ' ').ljust(col, '.') + ' ' if j == 0 else ' ' * (col + 1)
+            key = label if j == 0 else ''
+            dots = (' ' + '.' * (col - len(label) - 1) + ' ') if j == 0 else ' ' * (col + 1)
             o.append('<text x="%d" y="%d" font-size="15" xml:space="preserve">'
-                     '<tspan fill="%s">%s</tspan><tspan fill="%s">%s</tspan></text>'
-                     % (x0, y, c['muted'], esc(lead), c['ink'], esc(v)))
+                     '<tspan fill="%s">%s</tspan><tspan fill="%s">%s</tspan><tspan fill="%s">%s</tspan></text>'
+                     % (x0, y, c['accent'], esc(key), c['faint'], dots, c['ink'], esc(v)))
             y += 21
         y += 7
 

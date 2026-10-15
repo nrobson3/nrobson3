@@ -72,13 +72,14 @@ def sheet(c):
         if kind == 'rule':
             title, dashes = parts
             o.append('<text x="%d" y="%.1f" font-size="%.1f" xml:space="preserve"><tspan fill="%s" font-weight="700">%s</tspan>'
-                     '<tspan fill="%s">%s</tspan></text>' % (x0, y, TEXT_SIZE, c['ink'], esc(title), c['faint'], dashes))
+                     '<tspan fill="%s">%s</tspan></text>' % (x0, y, TEXT_SIZE, c['accent'] if title.startswith(USER) else c['ink'],
+                                                             esc(title), c['faint'], dashes))
         else:
             head, dots, value = parts
             key = head[2:]
             o.append('<text x="%d" y="%.1f" font-size="%.1f" xml:space="preserve"><tspan fill="%s">. </tspan>'
                      '<tspan fill="%s">%s</tspan><tspan fill="%s">%s</tspan><tspan fill="%s">%s</tspan></text>'
-                     % (x0, y, TEXT_SIZE, c['faint'], c['muted'], esc(key), c['faint'], dots, c['ink'], esc(value)))
+                     % (x0, y, TEXT_SIZE, c['faint'], c['accent'], esc(key), c['faint'], dots, c['ink'], esc(value)))
         y += LINE
 
     # portrait, centred in the right-hand view
