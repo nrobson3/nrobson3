@@ -33,7 +33,7 @@ ROWS = [
     ('Status', ['Open to co-op & internships']),
 ]
 CAPTION = ['18 / 18 / 54 planetary, ring held', 'sun 4 : 1 carrier, true involutes']
-TITLE_BLOCK = [('DRAWN', 'N. ROBSON'), ('DWG', 'NR-001'), ('REV', 'A'), ('UNITS', 'mm'), ('SHEET', '1 / 2')]
+TITLE_BLOCK = [('DRAWN', 'N. ROBSON'), ('DWG', 'NR-001'), ('REV', 'A'), ('UNITS', 'mm'), ('SHEET', '1 / 3')]
 
 W, H = 900, 420
 

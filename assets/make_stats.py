@@ -123,8 +123,8 @@ def sheet(c, g):
     o.append('<text x="%d" y="%d" font-size="10" text-anchor="end" fill="%s">%s</text>'
              % (gx + 30 * (cw + gap) - gap, sy + sh + 22, c['muted'], g['end'].strftime('%d %b').upper()))
 
-    o += title_block(c, W, H, [('DRAWN', 'N. ROBSON'), ('DWG', 'NR-002'), ('REV', 'A'),
-                               ('AS OF', g['end'].isoformat()), ('SHEET', '2 / 2')])
+    o += title_block(c, W, H, [('DRAWN', 'N. ROBSON'), ('DWG', 'NR-003'), ('REV', 'A'),
+                               ('AS OF', g['end'].isoformat()), ('SHEET', '3 / 3')])
     o.append('</svg>')
     return '\n'.join(o)
 

@@ -10,6 +10,11 @@
 </p>
 
 <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/portrait-dark.svg">
+  <img alt="Character portrait of Navy Robson beside a spec list: Western University engineering (common first year), Fusion 360 and its Python API, mechanisms, moulded parts and GD&T drawings, freelancing on Upwork." src="assets/portrait-light.svg" width="900">
+</picture>
+
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg">
   <img alt="Performance data. Upwork: 100% Job Success, 5.0 client rating, 10 jobs completed, $1K+ earned. GitHub: public repos, Fusion scripts, unit tests and parts verified, plus contributions over the last 30 days." src="assets/stats-light.svg" width="900">
 </picture>
