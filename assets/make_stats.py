@@ -21,13 +21,15 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 USER = 'nrobson3'
 W, H = 900, 300
 
-# ------------------------------------------------------------------ set by hand
-# Check against the Upwork dashboard before each refresh.
+# ------------------------------------------------------------------ Upwork figures
+# Kept in profile_data.json: the weekly update refreshes jobs and earnings from the
+# Upwork connector; Job Success and rating are not exposed there, so they are set by hand.
+_DATA = json.load(open(os.path.join(HERE, 'profile_data.json'), encoding='utf-8'))['upwork']
 UPWORK = [
-    ('100%', 'JOB SUCCESS'),
-    ('5.0', 'CLIENT RATING'),
-    ('10', 'JOBS COMPLETED'),
-    ('$1K+', 'EARNED'),
+    (_DATA['job_success'], 'JOB SUCCESS'),
+    (_DATA['rating'], 'CLIENT RATING'),
+    (_DATA['jobs'], 'JOBS COMPLETED'),
+    (_DATA['earned'], 'EARNED'),
 ]
 PARTS_VERIFIED = 3        # parts built and measured in Fusion across the public repos
 LOCAL_CLONES = os.path.normpath(os.path.join(HERE, '..', '..'))   # folder holding the repo clones

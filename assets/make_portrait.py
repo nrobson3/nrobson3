@@ -5,6 +5,7 @@
 The portrait comes from portrait.txt (made by photo_to_ascii.py). Edit SECTIONS
 to change the text; values are right-aligned with dot leaders, as in neofetch.
 """
+import json
 import os
 
 from sheet import THEMES, esc, frame, open_svg, title_block, write
@@ -28,11 +29,9 @@ SECTIONS = [
         ('Moulded.Parts', 'snap fits, draft, parting lines'),
         ('Drawings', 'GD&T, ISO first-angle'),
     ]),
-    ('Currently', [
-        ('Team', 'Western Formula Racing (recruit)'),
-        ('Building', 'service brake, manual override'),
-        ('Learning', 'FEA in SolidWorks'),
-    ]),
+    # rewritten weekly by the Sunday update; see profile_data.json
+    ('Currently', [tuple(r) for r in json.load(
+        open(os.path.join(HERE, 'profile_data.json'), encoding='utf-8'))['currently']]),
     ('Freelance', [
         ('Platform', 'Upwork'),
         ('Clients', 'product makers, inventors'),
@@ -41,8 +40,8 @@ SECTIONS = [
 WIDTH = 52              # characters per line on the text side
 TEXT_SIZE = 13.2        # px; Consolas is 0.55 em wide, so 52 chars is about 380 px
 LINE = 20.5
-ART_SIZE = 12.2
-ART_LINE = 13.6
+ART_SIZE = 13.8
+ART_LINE = 15.4
 
 
 def line_items():
@@ -84,10 +83,13 @@ def sheet(c):
 
     # portrait, centred in the right-hand view
     art = open(os.path.join(HERE, 'portrait.txt'), encoding='utf-8').read().rstrip('\n').split('\n')
-    cols = max(len(l) for l in art)
-    art_w = cols * ART_SIZE * 0.55
-    ax = 668 - art_w / 2
-    ay = 19 + (H - 64 - 19 - len(art) * ART_LINE) / 2 + ART_SIZE
+    # centre the drawn characters, not the text block: rows carry leading spaces
+    lead = min(len(l) - len(l.lstrip(' ')) for l in art if l.strip())
+    span = max(len(l) for l in art) - lead
+    cw = ART_SIZE * 0.55
+    view_x0, view_x1 = 477, W - 19
+    ax = (view_x0 + view_x1) / 2 - (lead + span / 2) * cw
+    ay = 19 + (H - 64 - 19 - len(art) * ART_LINE) / 2 + ART_LINE * 0.78
     o.append('<g font-size="%.1f" fill="%s" xml:space="preserve">' % (ART_SIZE, c['ink']))
     for i, l in enumerate(art):
         if l.strip():

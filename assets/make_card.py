@@ -178,7 +178,7 @@ def card(theme):
     o.append('<line x1="352.5" y1="19" x2="352.5" y2="%d" stroke="%s" stroke-width="1"/>' % (H - 64, c['faint']))
 
     # ---------------- text
-    x0, y = 382, 66
+    x0, y = 382, 60
     o.append('<text x="%d" y="%d" font-size="26" font-weight="700" letter-spacing="3" fill="%s">%s</text>'
              % (x0, y, c['ink'], NAME))
     o.append('<line x1="%d" y1="%d" x2="%d" y2="%d" stroke="%s" stroke-width="1"/>' % (x0, y + 14, W - 44, y + 14, c['faint']))
@@ -191,7 +191,7 @@ def card(theme):
                      '<tspan fill="%s">%s</tspan><tspan fill="%s">%s</tspan></text>'
                      % (x0, y, c['muted'], esc(lead), c['ink'], esc(v)))
             y += 21
-        y += 9
+        y += 7
 
     o += title_block(c, W, H, TITLE_BLOCK)
     o.append('</svg>')

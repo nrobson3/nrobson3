@@ -1,2 +1,6 @@
 __pycache__/
 *.pyc
+# single-sheet previews; the README uses profile-*.svg
+assets/card-*.svg
+assets/portrait-*.svg
+assets/stats-*.svg
