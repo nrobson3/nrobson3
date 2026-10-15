@@ -11,6 +11,8 @@ stay in mesh for the whole loop.
 import math
 import os
 
+from sheet import THEMES, esc, frame, open_svg, title_block, write
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 # ------------------------------------------------------------------ gear set
@@ -31,15 +33,9 @@ ROWS = [
     ('Status', ['Open to co-op & internships']),
 ]
 CAPTION = ['18 / 18 / 54 planetary, ring held', 'sun 4 : 1 carrier, true involutes']
-TITLE_BLOCK = [('DWG', 'NR-001'), ('REV', 'A'), ('UNITS', 'mm'), ('SHEET', '1 / 1')]
-
-THEMES = {
-    'dark': {'bg': '#0a0a0a', 'ink': '#e8e8e8', 'muted': '#8a8a8a', 'faint': '#3a3a3a'},
-    'light': {'bg': '#ffffff', 'ink': '#141414', 'muted': '#6a6a6a', 'faint': '#cfcfcf'},
-}
+TITLE_BLOCK = [('DRAWN', 'N. ROBSON'), ('DWG', 'NR-001'), ('REV', 'A'), ('UNITS', 'mm'), ('SHEET', '1 / 2')]
 
 W, H = 900, 420
-FONT = "Consolas, 'DejaVu Sans Mono', Menlo, 'Liberation Mono', monospace"
 
 
 def inv(a):
@@ -126,10 +122,6 @@ def spin(cx, cy, period, direction=1):
             'to="%d %.2f %.2f" dur="%.3fs" repeatCount="indefinite"/>' % (cx, cy, to, cx, cy, period))
 
 
-def esc(t):
-    return t.replace('&', '&amp;').replace('<', '&lt;')
-
-
 def card(theme):
     c = THEMES[theme]
     s = 3.05                       # px per mm
@@ -143,16 +135,9 @@ def card(theme):
     # SVG y points down, so a positive maths angle is a negative SVG rotation
     sun_T, car_T, rel_T = 360.0 / w_s, 360.0 / w_c, 360.0 / abs(w_rel)
 
-    o = []
-    o.append('<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d" '
-             'font-family="%s" role="img" aria-label="Navy Robson, engineering student at Western '
-             'University; Fusion 360 mechanical design">' % (W, H, W, H, FONT))
-    o.append('<rect width="%d" height="%d" rx="6" fill="%s"/>' % (W, H, c['bg']))
-    # drawing frame: outer border and inner frame
-    o.append('<rect x="8.5" y="8.5" width="%d" height="%d" fill="none" stroke="%s" stroke-width="1"/>'
-             % (W - 17, H - 17, c['faint']))
-    o.append('<rect x="18.5" y="18.5" width="%d" height="%d" fill="none" stroke="%s" stroke-width="1.4"/>'
-             % (W - 37, H - 37, c['ink']))
+    o = [open_svg(W, H, 'Navy Robson, engineering student at Western University; '
+                       'Fusion 360 mechanical design')]
+    o += frame(c, W, H)
 
     # ---------------- gears
     g = ['<g fill="none" stroke="%s" stroke-width="1.15" stroke-linejoin="round">' % c['ink']]
@@ -208,30 +193,7 @@ def card(theme):
             y += 21
         y += 9
 
-    # ---------------- title block strip
-    ty = H - 64
-    o.append('<line x1="19" y1="%d" x2="%d" y2="%d" stroke="%s" stroke-width="1.4"/>' % (ty, W - 19, ty, c['ink']))
-    cells = len(TITLE_BLOCK) + 2
-    cw = (W - 38) / cells
-    for i in range(1, cells):
-        xx = 19 + cw * i
-        o.append('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="%s" stroke-width="1"/>' % (xx, ty, xx, H - 19, c['ink']))
-    o.append('<text x="%.1f" y="%d" font-size="10" fill="%s">DRAWN</text>' % (27, ty + 16, c['muted']))
-    o.append('<text x="%.1f" y="%d" font-size="14" fill="%s">N. ROBSON</text>' % (27, ty + 35, c['ink']))
-    for i, (k, v) in enumerate(TITLE_BLOCK):
-        xx = 19 + cw * (i + 1) + 8
-        o.append('<text x="%.1f" y="%d" font-size="10" fill="%s">%s</text>' % (xx, ty + 16, c['muted'], k))
-        o.append('<text x="%.1f" y="%d" font-size="14" fill="%s">%s</text>' % (xx, ty + 35, c['ink'], esc(v)))
-    # first-angle projection symbol in the last cell
-    fx, fy = 19 + cw * (cells - 1) + cw / 2, ty + 23
-    o.append('<g fill="none" stroke="%s" stroke-width="1">' % c['ink'])
-    o.append('<circle cx="%.1f" cy="%.1f" r="9"/><circle cx="%.1f" cy="%.1f" r="4.5"/>' % (fx + 22, fy, fx + 22, fy))
-    o.append('<polygon points="%.1f,%.1f %.1f,%.1f %.1f,%.1f %.1f,%.1f"/>' % (
-        fx - 30, fy - 4.5, fx - 6, fy - 9, fx - 6, fy + 9, fx - 30, fy + 4.5))
-    o.append('<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="%s" stroke-dasharray="6 2 1.5 2"/>' % (
-        fx - 36, fy, fx + 36, fy, c['muted']))
-    o.append('</g>')
-
+    o += title_block(c, W, H, TITLE_BLOCK)
     o.append('</svg>')
     return '\n'.join(o)
 
@@ -239,6 +201,5 @@ def card(theme):
 if __name__ == '__main__':
     for t in THEMES:
         p = os.path.join(HERE, 'card-%s.svg' % t)
-        with open(p, 'w', encoding='utf-8', newline='\n') as f:
-            f.write(card(t))
+        write(p, card(t))
         print(p, os.path.getsize(p), 'bytes')

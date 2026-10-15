@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="264" height="58" viewBox="0 0 264 58" font-family="Consolas, 'DejaVu Sans Mono', Menlo, 'Liberation Mono', monospace" role="img" aria-label="LINKEDIN: in/navy-robson">
+<rect width="264" height="58" rx="5" fill="#ffffff"/>
+<rect x="3.5" y="3.5" width="257" height="51" fill="none" stroke="#141414" stroke-width="1.3"/>
+<circle cx="17" cy="29" r="2.6" fill="#141414"/>
+<line x1="17" y1="29" x2="30" y2="29" stroke="#6a6a6a" stroke-width="1"/>
+<text x="38" y="24" font-size="10" letter-spacing="2" fill="#6a6a6a">LINKEDIN</text>
+<text x="38" y="42" font-size="13.5" fill="#141414">in/navy-robson</text>
+<g fill="none" stroke="#141414" stroke-width="1.4" stroke-linecap="square">
+<line x1="236" y1="35" x2="247" y2="24"/>
+<polyline points="240,24 247,24 247,31"/>
+</g></svg>
