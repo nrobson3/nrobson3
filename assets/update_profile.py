@@ -89,7 +89,9 @@ def main():
     print('currently:', '; '.join('%s = %s' % (k, v) for k, v in data['currently']))
     print('upwork:', data['upwork'])
 
-    run(['git', 'add', 'assets/profile_data.json', 'assets/profile-dark.svg', 'assets/profile-light.svg'])
+    images = sorted(os.path.relpath(p, REPO).replace(os.sep, '/')
+                    for p in glob.glob(os.path.join(HERE, 'profile-*.svg')) + glob.glob(os.path.join(HERE, 'link-*.svg')))
+    run(['git', 'add', '-A', 'assets/profile_data.json'] + images)
     if not run(['git', 'diff', '--cached', '--name-only']).strip():
         print('no changes to publish')
         return

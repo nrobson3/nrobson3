@@ -1,48 +1,59 @@
-"""Link tiles under the profile card, drawn as drawing callouts.
+"""The link band between sheet 1 and sheet 2: three cells, one image each.
 
-Each tile is its own small image so the README can wrap it in a real link
-(links inside an SVG shown as an image are not clickable).
-
-    python make_links.py   ->  link-<name>-dark.svg, link-<name>-light.svg
+Each cell is a third of the drawing's width, so the README can make each one a
+real link (links inside an image are not clickable) while the band still reads
+as part of the sheet: the left and right cells carry the frame's side lines.
+Built by make_profile.py.
 """
 import os
 
 from sheet import THEMES, esc, open_svg, write
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-W, H = 264, 58
+W, H = 300, 64            # three cells across the 900-wide sheet
 
 LINKS = [
-    ('linkedin', 'LINKEDIN', 'in/navy-robson'),
-    ('upwork', 'UPWORK', 'freelancers/navyrobson'),
-    ('code', 'CODE', 'fusion360-parametric-parts'),
+    ('linkedin', 'LINKEDIN', 'in/navy-robson', 'in'),
+    ('upwork', 'UPWORK', 'freelancers/navyrobson', 'Up'),
+    ('code', 'CODE', 'fusion360-parametric-parts', '</>'),
 ]
+BADGE_FONT = "'Segoe UI', Arial, Helvetica, sans-serif"
 
 
-def tile(c, label, value):
+def badge(c, x, y, glyph):
+    """Solid rounded square with the glyph knocked out, in the sheet's ink."""
+    s = 28
+    o = ['<rect x="%.1f" y="%.1f" width="%d" height="%d" rx="5" fill="%s"/>' % (x, y, s, s, c['ink'])]
+    size = 15 if len(glyph) <= 2 else 11.5
+    o.append('<text x="%.1f" y="%.1f" text-anchor="middle" font-family="%s" font-size="%.1f" font-weight="700" '
+             'fill="%s">%s</text>' % (x + s / 2, y + s / 2 + size * 0.36, BADGE_FONT, size, c['bg'], esc(glyph)))
+    return o
+
+
+def cell(c, framed, i, label, value, glyph):
+    first, last = i == 0, i == len(LINKS) - 1
     o = [open_svg(W, H, '%s: %s' % (label, value))]
-    o.append('<rect width="%d" height="%d" rx="5" fill="%s"/>' % (W, H, c['bg']))
-    o.append('<rect x="3.5" y="3.5" width="%d" height="%d" fill="none" stroke="%s" stroke-width="1.3"/>'
-             % (W - 7, H - 7, c['ink']))
-    # leader line from a datum dot, like a callout on a drawing
-    o.append('<circle cx="17" cy="%d" r="2.6" fill="%s"/>' % (H // 2, c['ink']))
-    o.append('<line x1="17" y1="%d" x2="30" y2="%d" stroke="%s" stroke-width="1"/>' % (H // 2, H // 2, c['muted']))
-    o.append('<text x="38" y="24" font-size="10" letter-spacing="2" fill="%s">%s</text>' % (c['muted'], esc(label)))
-    # shrink long values so they stop short of the arrow (0.6 em is a wide monospace fallback)
-    size = min(13.5, (W - 38 - 40) / (0.6 * len(value)))
-    o.append('<text x="38" y="42" font-size="%.1f" fill="%s">%s</text>' % (size, c['ink'], esc(value)))
-    # arrow out of the sheet
-    ax, ay = W - 22, H // 2
+    o += framed(c, W, H, open_top=True, open_bottom=True, left=first, right=last, rules=False)
+    x0 = 18.5 if first else 0.0
+    x1 = W - 18.5 if last else W
+    if not first:      # cell divider, drawn by the cell on its right
+        o.append('<line x1="0.7" y1="0" x2="0.7" y2="%d" stroke="%s" stroke-width="1.4"/>' % (H, c['ink']))
+    bx = x0 + 16
+    o += badge(c, bx, (H - 28) / 2, glyph)
+    tx = bx + 28 + 12
+    o.append('<text x="%.1f" y="%d" font-size="10" letter-spacing="2" fill="%s">%s</text>' % (tx, 27, c['muted'], esc(label)))
+    room = (x1 - 30) - tx
+    size = min(13.5, room / (0.6 * len(value)))
+    o.append('<text x="%.1f" y="%d" font-size="%.1f" fill="%s">%s</text>' % (tx, 45, size, c['ink'], esc(value)))
+    ax, ay = x1 - 18, H // 2
     o.append('<g fill="none" stroke="%s" stroke-width="1.4" stroke-linecap="square">' % c['ink'])
-    o.append('<line x1="%d" y1="%d" x2="%d" y2="%d"/>' % (ax - 6, ay + 6, ax + 5, ay - 5))
-    o.append('<polyline points="%d,%d %d,%d %d,%d"/>' % (ax - 2, ay - 5, ax + 5, ay - 5, ax + 5, ay + 2))
+    o.append('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d"/>' % (ax - 6, ay + 6, ax + 5, ay - 5))
+    o.append('<polyline points="%.1f,%d %.1f,%d %.1f,%d"/>' % (ax - 2, ay - 5, ax + 5, ay - 5, ax + 5, ay + 2))
     o.append('</g></svg>')
     return '\n'.join(o)
 
 
-if __name__ == '__main__':
-    for key, label, value in LINKS:
+def build(framed):
+    for i, (key, label, value, glyph) in enumerate(LINKS):
         for t, c in THEMES.items():
-            p = os.path.join(HERE, 'link-%s-%s.svg' % (key, t))
-            write(p, tile(c, label, value))
-            print(p)
+            write(os.path.join(HERE, 'link-%s-%s.svg' % (key, t)), cell(c, framed, i, label, value, glyph))
