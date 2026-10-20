@@ -2,12 +2,21 @@
   "upwork": {
     "job_success": "100%",
     "rating": "5.0",
-    "jobs": "10",
+    "jobs": "11",
     "earned": "$1K+"
   },
   "currently": [
-    ["Team", "Western Formula Racing (recruit)"],
-    ["Building", "service brake, manual override"],
-    ["Learning", "FEA in SolidWorks"]
+    [
+      "Team",
+      "Western Formula Racing (recruit)"
+    ],
+    [
+      "Building",
+      "service brake, manual override"
+    ],
+    [
+      "Learning",
+      "FEA in SolidWorks"
+    ]
   ]
 }
