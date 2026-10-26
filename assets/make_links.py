@@ -1,6 +1,6 @@
-"""The link band between sheet 1 and sheet 2: three cells, one image each.
+"""The link band between sheet 1 and sheet 2: four cells, one image each.
 
-Each cell is a third of the drawing's width, so the README can make each one a
+Each cell is a quarter of the drawing's width, so the README can make each one a
 real link (links inside an image are not clickable) while the band still reads
 as part of the sheet: the left and right cells carry the frame's side lines.
 Built by make_profile.py.
@@ -10,12 +10,13 @@ import os
 from sheet import THEMES, esc, open_svg, write
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-W, H = 300, 64            # three cells across the 900-wide sheet
+W, H = 225, 64            # four cells across the 900-wide sheet
 
 LINKS = [
+    ('website', 'WEBSITE', 'navyrobson.com', 'www'),
     ('linkedin', 'LINKEDIN', 'in/navy-robson', 'in'),
     ('upwork', 'UPWORK', 'freelancers/navyrobson', 'Up'),
-    ('code', 'CODE', 'fusion360-parametric-parts', '</>'),
+    ('code', 'CODE', 'github.com/nrobson3', '</>'),
 ]
 BADGE_FONT = "'Segoe UI', Arial, Helvetica, sans-serif"
 
@@ -24,7 +25,7 @@ def badge(c, x, y, glyph):
     """Solid rounded square with the glyph knocked out, in the sheet's ink."""
     s = 28
     o = ['<rect x="%.1f" y="%.1f" width="%d" height="%d" rx="5" fill="%s"/>' % (x, y, s, s, c['ink'])]
-    size = 15 if len(glyph) <= 2 else 11.5
+    size = 15 if len(glyph) <= 2 else (9.5 if glyph == 'www' else 11.5)
     o.append('<text x="%.1f" y="%.1f" text-anchor="middle" font-family="%s" font-size="%.1f" font-weight="700" '
              'fill="%s">%s</text>' % (x + s / 2, y + s / 2 + size * 0.36, BADGE_FONT, size, c['bg'], esc(glyph)))
     return o

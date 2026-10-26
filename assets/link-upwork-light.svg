@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="64" viewBox="0 0 300 64" font-family="Consolas, 'DejaVu Sans Mono', Menlo, 'Liberation Mono', monospace" role="img" aria-label="UPWORK: freelancers/navyrobson">
-<rect x="0" y="-10" width="300" height="84" rx="6" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="225" height="64" viewBox="0 0 225 64" font-family="Consolas, 'DejaVu Sans Mono', Menlo, 'Liberation Mono', monospace" role="img" aria-label="UPWORK: freelancers/navyrobson">
+<rect x="0" y="-10" width="225" height="84" rx="6" fill="#ffffff"/>
 <line x1="0.7" y1="0" x2="0.7" y2="64" stroke="#141414" stroke-width="1.4"/>
 <rect x="16.0" y="18.0" width="28" height="28" rx="5" fill="#141414"/>
 <text x="30.0" y="37.4" text-anchor="middle" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="15.0" font-weight="700" fill="#ffffff">Up</text>
 <text x="56.0" y="27" font-size="10" letter-spacing="2" fill="#0969da">UPWORK</text>
-<text x="56.0" y="45" font-size="13.5" fill="#141414">freelancers/navyrobson</text>
+<text x="56.0" y="45" font-size="10.5" fill="#141414">freelancers/navyrobson</text>
 <g fill="none" stroke="#0969da" stroke-width="1.4" stroke-linecap="square">
-<line x1="276.0" y1="38" x2="287.0" y2="27"/>
-<polyline points="280.0,27 287.0,27 287.0,34"/>
+<line x1="201.0" y1="38" x2="212.0" y2="27"/>
+<polyline points="205.0,27 212.0,27 212.0,34"/>
 </g></svg>

@@ -29,10 +29,10 @@
 <text x="382" y="176" font-size="15" xml:space="preserve"><tspan fill="#58a6ff"></tspan><tspan fill="#3a3a3a">             </tspan><tspan fill="#e8e8e8">GD&amp;T drawings</tspan></text>
 <text x="382" y="204" font-size="15" xml:space="preserve"><tspan fill="#58a6ff">Tools</tspan><tspan fill="#3a3a3a"> ...... </tspan><tspan fill="#e8e8e8">Fusion 360, Python (Fusion API),</tspan></text>
 <text x="382" y="225" font-size="15" xml:space="preserve"><tspan fill="#58a6ff"></tspan><tspan fill="#3a3a3a">             </tspan><tspan fill="#e8e8e8">Onshape</tspan></text>
-<text x="382" y="253" font-size="15" xml:space="preserve"><tspan fill="#58a6ff">Code</tspan><tspan fill="#3a3a3a"> ....... </tspan><tspan fill="#e8e8e8">fusion360-parametric-parts:</tspan></text>
-<text x="382" y="274" font-size="15" xml:space="preserve"><tspan fill="#58a6ff"></tspan><tspan fill="#3a3a3a">             </tspan><tspan fill="#e8e8e8">parts that check their own math</tspan></text>
-<text x="382" y="302" font-size="15" xml:space="preserve"><tspan fill="#58a6ff">Freelance</tspan><tspan fill="#3a3a3a"> .. </tspan><tspan fill="#e8e8e8">Upwork, 100% Job Success</tspan></text>
-<text x="382" y="330" font-size="15" xml:space="preserve"><tspan fill="#58a6ff">Status</tspan><tspan fill="#3a3a3a"> ..... </tspan><tspan fill="#e8e8e8">Open to co-op &amp; internships</tspan></text>
+<text x="382" y="253" font-size="15" xml:space="preserve"><tspan fill="#58a6ff">Code</tspan><tspan fill="#3a3a3a"> ....... </tspan><tspan fill="#e8e8e8">Fusion API, 2D FE, DFM checks</tspan></text>
+<text x="382" y="281" font-size="15" xml:space="preserve"><tspan fill="#58a6ff">Portfolio</tspan><tspan fill="#3a3a3a"> .. </tspan><tspan fill="#e8e8e8">navyrobson.com</tspan></text>
+<text x="382" y="309" font-size="15" xml:space="preserve"><tspan fill="#58a6ff">Freelance</tspan><tspan fill="#3a3a3a"> .. </tspan><tspan fill="#e8e8e8">Upwork, 100% Job Success</tspan></text>
+<text x="382" y="337" font-size="15" xml:space="preserve"><tspan fill="#58a6ff">Status</tspan><tspan fill="#3a3a3a"> ..... </tspan><tspan fill="#e8e8e8">Open to co-op &amp; internships</tspan></text>
 <line x1="19" y1="356" x2="881" y2="356" stroke="#e8e8e8" stroke-width="1.4"/>
 <line x1="162.7" y1="356" x2="162.7" y2="401" stroke="#e8e8e8" stroke-width="1"/>
 <line x1="306.3" y1="356" x2="306.3" y2="401" stroke="#e8e8e8" stroke-width="1"/>

@@ -28,7 +28,8 @@ ROWS = [
     ('Program', ['Engineering, Western University', '(common first year)']),
     ('Focus', ['Mechanisms, moulded-part DFM,', 'GD&T drawings']),
     ('Tools', ['Fusion 360, Python (Fusion API),', 'Onshape']),
-    ('Code', ['fusion360-parametric-parts:', 'parts that check their own math']),
+    ('Code', ['Fusion API, 2D FE, DFM checks']),
+    ('Portfolio', ['navyrobson.com']),
     ('Freelance', ['Upwork, 100% Job Success']),
     ('Status', ['Open to co-op & internships']),
 ]

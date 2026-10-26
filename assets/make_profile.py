@@ -3,7 +3,7 @@
     python make_profile.py    ->  profile-top-*.svg, link-*-*.svg, profile-bottom-*.svg
 
   top     sheet 1, frame open at the bottom
-  band    three link cells, each its own image so it can be a real link; the
+  band    four link cells, each its own image so it can be a real link; the
           outer cells carry the drawing's side frame lines
   bottom  sheets 2 and 3 sharing an edge, frame open at the top
 
@@ -92,9 +92,10 @@ def bottom(theme, g):
 
 
 LINK_URLS = {
+    'website': ('https://navyrobson.com', 'Website: navyrobson.com'),
     'linkedin': ('https://www.linkedin.com/in/navy-robson', 'LinkedIn: in/navy-robson'),
     'upwork': ('https://www.upwork.com/freelancers/navyrobson', 'Upwork: freelancers/navyrobson'),
-    'code': ('https://github.com/nrobson3/fusion360-parametric-parts', 'Code: fusion360-parametric-parts'),
+    'code': ('https://github.com/nrobson3?tab=repositories', 'Code: github.com/nrobson3'),
 }
 TOP_ALT = ('Navy Robson. Engineering student at Western University (common first year). Fusion 360 '
            'mechanical design: mechanisms, moulded-part DFM, GD&T drawings; Python and the Fusion API.')
@@ -117,7 +118,7 @@ def readme():
                                                        src(stem + '-light.svg'), width))
     parts = [pic('profile-top', TOP_ALT, '100%')]
     for key, (url, alt) in LINK_URLS.items():
-        parts.append('<a href="%s">%s</a>' % (url, pic('link-' + key, alt, '33.333%')))
+        parts.append('<a href="%s">%s</a>' % (url, pic('link-' + key, alt, '25%')))
     parts.append(pic('profile-bottom', BOTTOM_ALT, '100%'))
     with open(os.path.join(os.path.dirname(HERE), 'README.md'), 'w', encoding='utf-8', newline='\n') as f:
         f.write(''.join(parts) + '\n')
