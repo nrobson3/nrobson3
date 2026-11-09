@@ -23,7 +23,7 @@
 <text x="44" y="287.0" font-size="13.2" xml:space="preserve"><tspan fill="#3a3a3a">. </tspan><tspan fill="#58a6ff">Drawings: </tspan><tspan fill="#3a3a3a">.................. </tspan><tspan fill="#e8e8e8">GD&amp;T, ISO first-angle</tspan></text>
 <text x="44" y="319.8" font-size="13.2" xml:space="preserve"><tspan fill="#e8e8e8" font-weight="700">- Currently </tspan><tspan fill="#3a3a3a">----------------------------------------</tspan></text>
 <text x="44" y="340.3" font-size="13.2" xml:space="preserve"><tspan fill="#3a3a3a">. </tspan><tspan fill="#58a6ff">Team: </tspan><tspan fill="#3a3a3a">........... </tspan><tspan fill="#e8e8e8">Western Formula Racing (recruit)</tspan></text>
-<text x="44" y="360.8" font-size="13.2" xml:space="preserve"><tspan fill="#3a3a3a">. </tspan><tspan fill="#58a6ff">Building: </tspan><tspan fill="#3a3a3a">.......... </tspan><tspan fill="#e8e8e8">navyrobson.com portfolio site</tspan></text>
+<text x="44" y="360.8" font-size="13.2" xml:space="preserve"><tspan fill="#3a3a3a">. </tspan><tspan fill="#58a6ff">Building: </tspan><tspan fill="#3a3a3a">................ </tspan><tspan fill="#e8e8e8">Claude Code study tutor</tspan></text>
 <text x="44" y="381.3" font-size="13.2" xml:space="preserve"><tspan fill="#3a3a3a">. </tspan><tspan fill="#58a6ff">Learning: </tspan><tspan fill="#3a3a3a">...................... </tspan><tspan fill="#e8e8e8">FEA in SolidWorks</tspan></text>
 <text x="44" y="414.1" font-size="13.2" xml:space="preserve"><tspan fill="#e8e8e8" font-weight="700">- Freelance </tspan><tspan fill="#3a3a3a">----------------------------------------</tspan></text>
 <text x="44" y="434.6" font-size="13.2" xml:space="preserve"><tspan fill="#3a3a3a">. </tspan><tspan fill="#58a6ff">Platform: </tspan><tspan fill="#3a3a3a">................................. </tspan><tspan fill="#e8e8e8">Upwork</tspan></text>
@@ -103,7 +103,7 @@
 <text x="572" y="99" font-size="24" font-weight="700" fill="#e8e8e8">6</text>
 <text x="572" y="116" font-size="9.5" letter-spacing="1" fill="#8a8a8a">FUSION</text>
 <text x="572" y="128" font-size="9.5" letter-spacing="1" fill="#8a8a8a">SCRIPTS</text>
-<text x="668" y="99" font-size="24" font-weight="700" fill="#e8e8e8">258</text>
+<text x="668" y="99" font-size="24" font-weight="700" fill="#e8e8e8">259</text>
 <text x="668" y="116" font-size="9.5" letter-spacing="1" fill="#8a8a8a">UNIT</text>
 <text x="668" y="128" font-size="9.5" letter-spacing="1" fill="#8a8a8a">TESTS</text>
 <text x="764" y="99" font-size="24" font-weight="700" fill="#e8e8e8">3</text>
@@ -138,8 +138,8 @@
 <rect x="803.6" y="151" width="11.0" height="26" fill="#0e4429"><animate attributeName="opacity" values="1;1;0.37;1;1" keyTimes="0.000;0.542;0.567;0.612;1.000" dur="3.52s" begin="-0.66s" repeatCount="indefinite"/></rect>
 <rect x="816.7" y="151.5" width="10.0" height="25" fill="none" stroke="#3a3a3a" stroke-width="1"/>
 <rect x="829.3" y="151.5" width="10.0" height="25" fill="none" stroke="#3a3a3a" stroke-width="1"/>
-<rect x="841.9" y="151.5" width="10.0" height="25" fill="none" stroke="#3a3a3a" stroke-width="1"/>
-<text x="476" y="199" font-size="12" fill="#8a8a8a">44 contributions in the last 30 days</text>
+<rect x="841.4" y="151" width="11.0" height="26" fill="#0e4429"><animate attributeName="opacity" values="1;1;0.33;1;1;0.47;1;1;0.53;1;1" keyTimes="0.000;0.369;0.394;0.439;0.494;0.519;0.564;0.719;0.744;0.789;1.000" dur="5.39s" begin="-4.03s" repeatCount="indefinite"/></rect>
+<text x="476" y="199" font-size="12" fill="#8a8a8a">45 contributions in the last 30 days</text>
 <text x="852" y="199" font-size="10" text-anchor="end" fill="#8a8a8a">08 NOV</text>
 <line x1="19" y1="236" x2="881" y2="236" stroke="#e8e8e8" stroke-width="1.4"/>
 <line x1="162.7" y1="236" x2="162.7" y2="281" stroke="#e8e8e8" stroke-width="1"/>
